@@ -1,0 +1,33 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+
+<h2>
+    My Movie List
+</h2>
+
+@{
+
+    for (int i = 0; i < 10; i++)
+    {
+        if (i % 2 == 0)
+        {
+            <span>@i é par</span>
+            <br />
+        }
+        else
+        {
+            <span>@i é impar</span>
+            <br />
+        }
+    }
+}
+<strong>
+    @{
+        var texto = "isso é um texto em razor";
+    }
+    @String.Format($"{texto}")
+</strong>
+
