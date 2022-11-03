@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace MovieApplication.Models
+namespace MovieApplication.Application.Entidade
 {
     public class Movie
     {
