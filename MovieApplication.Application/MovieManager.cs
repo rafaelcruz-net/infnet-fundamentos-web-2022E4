@@ -9,9 +9,11 @@ namespace MovieApplication.Application
 {
     public class MovieManager
     {
-        public List<Movie> ObterTodos()
+        private List<Movie> Movies { get; set; }
+
+        public MovieManager()
         {
-            return new List<Movie>
+            Movies = new List<Movie>
             {
                 new Movie()
                 {
@@ -19,7 +21,8 @@ namespace MovieApplication.Application
                     Title = "Star Wars",
                     Genre = "SciFi",
                     Price = 19.99M,
-                    ReleaseDate = DateTime.Now
+                    ReleaseDate = DateTime.Now,
+                    Description = "Star Wars é uma franquia do tipo space opera estadunidense criada pelo cineasta George Lucas, que conta com uma série de nove filmes de fantasia científica e dois spin-offs.[1] O primeiro filme foi lançado apenas com o título Star Wars,[2] em 25 de maio de 1977, e tornou-se um fenômeno mundial inesperado de cultura popular,[3] sendo responsável pelo início da era dos blockbusters, que são superproduções cinematográficas que fazem sucesso nas bilheterias e viram franquias com brinquedos, jogos, livros, etc"
                 },
                 new Movie()
                 {
@@ -27,15 +30,31 @@ namespace MovieApplication.Application
                     Title = "O poderoso chefão",
                     Genre = "Drama",
                     Price = 29.99M,
-                    ReleaseDate = DateTime.Now
+                    ReleaseDate = DateTime.Now,
+                    Description = "The Godfather é um filme norte-americano de 1972, dirigido por Francis Ford Coppola, baseado no livro homônimo escrito por Mario Puzo. É estrelado por Marlon Brando, Al Pacino, James Caan, Richard Castellano, Robert Duvall, Sterling Hayden, John Marley, Richard Conte e Diane Keaton"
                 },
 
             };
         }
 
+
+
+        public List<Movie> ObterTodos()
+        {
+            return Movies;
+        }
+
         public Movie ObterPorId(int id)
         {
-            throw new NotImplementedException();
+            Movie result = null;
+
+            foreach (var item in Movies)
+            {
+                if (item.Id == id)
+                    result = item;
+            }
+
+            return result;
         }
 
         public void Salvar(Movie movie)

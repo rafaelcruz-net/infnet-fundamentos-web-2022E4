@@ -1,12 +1,6 @@
 ﻿@using MovieApplication.Application.Entidade
 @model List<Movie> 
 
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-
 <table class="table">
     <tr>
         <td>Id Filme</td>
@@ -14,6 +8,7 @@
         <td>Data de Lançamento</td>
         <td>Genero</td>
         <td>Preço</td>
+        <td>Ação</td>
     </tr>
 
     @foreach (var item in Model)
@@ -24,6 +19,12 @@
             <td>@item.ReleaseDate</td>
             <td>@item.Genre</td>
             <td>@item.Price</td>
+            <td>
+                <a asp-action="Detail" asp-controller="Movie" asp-route-movieId="@item.Id">Ver Detalhes</a>
+            </td>
+
         </tr>
     }
+        
 </table>
+

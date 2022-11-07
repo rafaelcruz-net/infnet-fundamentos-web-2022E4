@@ -22,5 +22,12 @@ namespace MovieApplication.Controllers
             
             return View(result);
         }
+
+        public IActionResult Detail(int movieId)
+        {
+            var result = MovieManager.ObterPorId(movieId);
+
+            return View(result);
+        }
     }
 }
