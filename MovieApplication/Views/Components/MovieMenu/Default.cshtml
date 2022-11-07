@@ -1,0 +1,14 @@
+﻿@model List<MovieApplication.Models.Menu>
+
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Filmes
+    </button>
+    
+    <ul class="dropdown-menu">
+        @foreach (var item in Model)
+        {
+            <li><a class="dropdown-item" asp-controller="Movie" asp-action="Search" asp-route-query="@item.MenuItem">@item.MenuItem</a></li>
+        }
+    </ul>
+</div>
