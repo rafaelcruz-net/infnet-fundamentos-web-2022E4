@@ -1,0 +1,19 @@
+﻿@model List<MovieApplication.Models.Menu>
+
+
+<div class="dropdown">
+    <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Filmes
+    </a>
+
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        @foreach (var item in Model)
+        {
+        <a class="dropdown-item" asp-controller="Movie" asp-action="Search" asp-route-query="@item.MenuItem">@item.MenuItem</a>
+        }
+
+        <a class="dropdown-item" asp-controller="Movie" asp-action="Index">Todos os Filmes</a>
+
+    </div>
+</div>
+

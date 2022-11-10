@@ -9,7 +9,7 @@ namespace MovieApplication.Components
 {
     public class MovieMenu : ViewComponent
     {
-        public IViewComponentResult InvokeAsync()
+        public Task<IViewComponentResult> InvokeAsync()
         {
             var result = new List<Menu>()
             {
@@ -18,7 +18,7 @@ namespace MovieApplication.Components
                 new Menu() { MenuItem = "Terror"},
             };
 
-            return View(result);
+            return Task.FromResult(View(result) as IViewComponentResult);
         }
 
     }
