@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - MovieApplication</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+
+    @if (ViewBag.DarkMode != null && ViewBag.DarkMode == true)
+    {
+        <link rel="stylesheet" href="~/css/site_dark.css" />
+    }
+    else
+    {
+        <link rel="stylesheet" href="~/css/site.css" />
+    }
 </head>
 <body>
     <header>
@@ -24,22 +32,29 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Movie" asp-action="Index">Filmes</a>
                         </li>
-
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
+    @if (ViewBag.ShowCard != null && ViewBag.ShowCard == true)
+    {
+        <div class="alert alert-danger" role="alert">
+            Apareceu o banner
+        </div>
+
+    }
+
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2022 - MovieApplication - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2022 - MovieApplication - Infnet
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

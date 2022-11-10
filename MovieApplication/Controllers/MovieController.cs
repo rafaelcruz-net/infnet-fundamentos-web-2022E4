@@ -19,7 +19,8 @@ namespace MovieApplication.Controllers
         public IActionResult Index()
         {
             var result = MovieManager.ObterTodos();
-            
+            ViewBag.ShowCard = true;
+            ViewBag.DarkMode = true;
             return View(result);
         }
 

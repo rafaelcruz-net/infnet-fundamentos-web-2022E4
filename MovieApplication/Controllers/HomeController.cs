@@ -20,6 +20,7 @@ namespace MovieApplication.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.ShowCard = true;
             return View();
         }
 
