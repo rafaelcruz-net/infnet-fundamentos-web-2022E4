@@ -13,7 +13,7 @@ namespace MovieApplication.Controllers
 
         public MovieController()
         {
-            MovieManager = new MovieManager(); 
+            MovieManager = new MovieManager();
         }
 
         public IActionResult Index()
@@ -30,5 +30,15 @@ namespace MovieApplication.Controllers
 
             return View(result);
         }
+
+        public IActionResult Search(string query)
+        {
+            var result = MovieManager.Search(query);
+
+            ViewBag.Search = $"Você está pesquisando por: {query}";
+
+            return View(result);
+        }
+
     }
 }

@@ -1,0 +1,33 @@
+﻿@using MovieApplication.Application.Entidade
+@model List<Movie>
+
+
+<h3>@ViewBag.Search</h3>
+
+<table class="table">
+    <tr>
+        <td>Id Filme</td>
+        <td>Nome</td>
+        <td>Data de Lançamento</td>
+        <td>Genero</td>
+        <td>Preço</td>
+        <td>Ação</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Title</td>
+            <td>@item.ReleaseDate</td>
+            <td>@item.Genre</td>
+            <td>@item.Price</td>
+            <td>
+                <a asp-action="Detail" asp-controller="Movie" asp-route-movieId="@item.Id">Ver Detalhes</a>
+            </td>
+
+        </tr>
+    }
+
+</table>
+

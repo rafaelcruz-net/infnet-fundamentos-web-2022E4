@@ -72,5 +72,18 @@ namespace MovieApplication.Application
             throw new NotImplementedException();
         }
 
+        public List<Movie> Search(string genero)
+        {
+            List<Movie> result = new List<Movie>();
+
+            foreach (var item in Movies)
+            {
+                if (string.Compare(item.Genre, genero, true) == 0)
+                    result.Add(item);
+            }
+
+            return result;
+        }
+
     }
 }
