@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MovieApplication.Application;
+using MovieApplication.Application.Entidade;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,7 @@ namespace MovieApplication.Controllers
             return View(result);
         }
 
+
         public IActionResult Search(string query)
         {
             var result = MovieManager.Search(query);
@@ -38,6 +40,19 @@ namespace MovieApplication.Controllers
             ViewBag.Search = $"Você está pesquisando por: {query}";
 
             return View(result);
+        }
+
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Save(Movie model)
+        {
+            MovieManager.Salvar(model);
+
+            return RedirectToAction("Index");
         }
 
     }
