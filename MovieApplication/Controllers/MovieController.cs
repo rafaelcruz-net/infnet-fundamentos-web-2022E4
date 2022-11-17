@@ -50,6 +50,9 @@ namespace MovieApplication.Controllers
         [HttpPost]
         public IActionResult Save(Movie model)
         {
+            if (ModelState.IsValid == false)
+                return View("Add");
+
             MovieManager.Salvar(model);
 
             return RedirectToAction("Index");

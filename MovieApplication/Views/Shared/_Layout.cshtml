@@ -14,6 +14,13 @@
     {
         <link rel="stylesheet" href="~/css/site.css" />
     }
+    <style>
+        .field-validation-error {
+            color: red;
+            font-size: 16px;
+        }
+
+    </style>
 </head>
 <body>
     <header>
@@ -30,7 +37,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            @await Component.InvokeAsync("MovieMenu")                             
+                            @await Component.InvokeAsync("MovieMenu")
                         </li>
                     </ul>
                 </div>
@@ -60,6 +67,8 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
