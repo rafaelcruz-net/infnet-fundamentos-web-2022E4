@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MovieApplication.Application;
-using MovieApplication.Application.Entidade;
+using MovieApplication.Entidade;
 using System;
 using System.Collections.Generic;
 using System.Linq;

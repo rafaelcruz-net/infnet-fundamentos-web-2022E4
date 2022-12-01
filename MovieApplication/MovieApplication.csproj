@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MovieApplication.Application\MovieApplication.Application.csproj" />
+    <ProjectReference Include="..\MovieApplication.Entidade\MovieApplication.Entidade.csproj" />
   </ItemGroup>
 
 </Project>

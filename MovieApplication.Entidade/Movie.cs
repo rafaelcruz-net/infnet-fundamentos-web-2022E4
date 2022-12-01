@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MovieApplication.Application.Entidade
+namespace MovieApplication.Entidade
 {
     public class Movie
     {
